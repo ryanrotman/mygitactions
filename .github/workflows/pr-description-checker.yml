@@ -17,4 +17,5 @@ jobs:
         id: description-checker
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          comment-empty-description: "PR description is empty, please add some valid description."
+          on-description-failed: true
+          on description-failed-comment: "PR description is empty, please add some valid description."
