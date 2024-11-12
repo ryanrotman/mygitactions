@@ -1,0 +1,20 @@
+name: 'PR description checker'
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - labeled
+      - unlabeled
+
+jobs:
+  check-pr-description:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ryanrotman/pr-description-checker@v1.0.0
+        id: description-checker
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          comment-empty-description: "PR description is empty, please add some valid description."
