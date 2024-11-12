@@ -13,7 +13,7 @@ jobs:
   check-pr-description:
     runs-on: ubuntu-latest
     steps:
-      - uses: ryanrotman/mygitactions@v1.0.0
+      - uses: actions/pr-description-checker@v1.0.0
         id: description-checker
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
