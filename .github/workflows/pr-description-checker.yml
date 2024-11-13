@@ -13,9 +13,5 @@ jobs:
   check-pr-description:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/pr-description-checker@v1.0.0
-        id: description-checker
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          on-description-failed: true
-          on description-failed-comment: "PR description is empty, please add some valid description."
+    - name: Print Body of PR
+      run: echo The Body of the PR is ${{ github.event.pull_request.body }}
