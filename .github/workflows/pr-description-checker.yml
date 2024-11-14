@@ -17,7 +17,3 @@ jobs:
       if: echo ${{ ! github.event.pull_request.body }}
         echo "Please provide a description to your PR."
         exit 1
-      if: echo ${{ github.event.pull_request.body }}
-        echo "Thanks for providing a description!"
-        exit 0
-      
