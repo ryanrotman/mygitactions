@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Check PR description
       run: |
-        if echo ${{ ! github.event.pull_request.body }}; then
+        if ${{ ! github.event.pull_request.body }}; then
           echo "Please provide a description to your PR."
           exit 1
         else
