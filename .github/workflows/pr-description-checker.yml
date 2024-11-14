@@ -14,8 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check PR description
+      env:
+        BODY: ${{ github.event.pull_request.body }}
       run: |
-        if ${{ ! github.event.pull_request.body }}; then
+        if ${{ ! env.BODY }}; then
           echo "Please provide a description to your PR."
           exit 1
         else
